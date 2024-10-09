@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -186,18 +186,19 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	position bottom
-	height 25
+position bottom
+	height 24
+        font pango:FontAwesome 14
         status_command ~/.config/bumblebee-status/bumblebee-status \
-		-t dracula-powerline \
+		-t iceberg-contrast \
 		-p pomodoro.work=45 pomodoro.break=15 spotify.format='{artist} - {title} - {album}' weather.location=Coacalco time.format="%H:%M" \
-		-m hostname cpu memory spotify weather pipewire pomodoro date time
+		-m hostname spotify cpu pipewire date time pomodoro
 	colors {
 		background #1a2321
 		statusline #000000
 		separator #acd9a7
 
-		focused_workspace #6271a9 #6271a9 #ffffff
+		focused_workspace #035da4 #035da4 #68b56e
 		active_workspace #000000 #000000 #000000
 		inactive_workspace #292a38 #292a38 #888380
 		statusline #569203
@@ -210,8 +211,8 @@ gaps outer 5
 gaps inner 10
 smart_gaps on
 # COLORES DE VENTANAS
-client.focused	#018abe #018abe #000000 #000000
-client.focused_inactive	#036da4 #035da4 #000000 #000000
+client.focused	#018abe #68b56e #000000 #68b56e
+client.focused_inactive	#036da4 #035da4 #000000 #035da4
 client.unfocused #000000 #001b48 #000000 #000000
 
 for_window [class="^.*"] border pixel 3
